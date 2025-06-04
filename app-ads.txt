@@ -1,0 +1,4 @@
+# Used for verifications
+
+# Admob
+google.com, pub-4291346674103291, DIRECT, f08c47fec0942fa0
