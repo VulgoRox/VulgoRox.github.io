@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Estilo BR</title>
+  <meta name="description" content="Privacy Policy for Estilo BR, covering Facebook login, Google Analytics, Google Pay, PlayFab, public profiles, and related services.">
+  <link rel="icon" href="game_icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="game_icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --paper: #071018;
+      --ink: #f3f8ff;
+      --text: #d8e4ee;
+      --muted: #91a1ac;
+      --line: #34505d;
+      --panel: rgba(12, 20, 29, 0.9);
+      --panel-soft: rgba(19, 35, 48, 0.92);
+      --accent: #24d6ff;
+      --accent-dark: #86ecff;
+      --gold: #ffca28;
+      --terra: #ff5148;
+      --steel: #6f7b7d;
+      --shadow: 0 16px 0 rgba(0, 0, 0, 0.28), 0 0 42px rgba(36, 214, 255, 0.16);
+      --radius: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 2%, rgba(36, 214, 255, 0.2), transparent 20rem),
+        linear-gradient(180deg, rgba(18, 29, 39, 0.96) 0, rgba(6, 12, 18, 0.98) 28rem, rgba(19, 24, 22, 0.98) 100%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 7px),
+        repeating-linear-gradient(90deg, rgba(36, 214, 255, 0.055) 0 1px, transparent 1px 76px),
+        var(--paper);
+      font-family: "Avenir Next Condensed", "Trebuchet MS", Verdana, sans-serif;
+      line-height: 1.65;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background:
+        linear-gradient(180deg, transparent 0 58%, rgba(255, 202, 40, 0.22) 58.2% 58.7%, transparent 59%),
+        linear-gradient(90deg, transparent 0 11%, rgba(255, 202, 40, 0.12) 11.2% 11.6%, transparent 11.8% 88%, rgba(255, 202, 40, 0.12) 88.2% 88.6%, transparent 88.8%),
+        radial-gradient(ellipse at 22% 16%, rgba(220, 240, 245, 0.17), transparent 15rem),
+        radial-gradient(ellipse at 80% 14%, rgba(220, 240, 245, 0.14), transparent 13rem);
+      pointer-events: none;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 24px 0 34px;
+      border-bottom: 4px solid rgba(111, 123, 125, 0.78);
+      background:
+        linear-gradient(180deg, rgba(5, 11, 17, 0.88), rgba(9, 18, 27, 0.74)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 7px);
+      box-shadow: inset 0 -14px 0 rgba(0, 0, 0, 0.32), 0 8px 0 rgba(0, 0, 0, 0.22);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      inset-inline: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(36, 214, 255, 0.5), transparent);
+      border-bottom: 0;
+    }
+
+    .hero::after {
+      bottom: 0;
+      height: 8px;
+      background: linear-gradient(90deg, transparent, var(--gold) 18%, var(--gold) 82%, transparent);
+      opacity: 0.75;
+    }
+
+    .hero .shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 58px;
+      padding: 16px 18px;
+      border: 1px solid rgba(52, 80, 93, 0.9);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(23, 34, 44, 0.92), rgba(5, 11, 18, 0.96));
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #f7fbff;
+      font-size: clamp(1.55rem, 2.3vw, 2.35rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 #02070c;
+    }
+
+    .brand-icon {
+      width: 74px;
+      height: 74px;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      background: #0b121a;
+      box-shadow: 4px 4px 0 #000, 0 0 18px rgba(36, 214, 255, 0.35);
+      image-rendering: pixelated;
+      object-fit: cover;
+    }
+
+    .language-switcher {
+      display: inline-grid;
+      grid-template-columns: repeat(3, 72px);
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid #425764;
+      border-radius: 4px;
+      background: linear-gradient(180deg, #202b35, #080f17);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 5px 5px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .language-switcher button {
+      min-width: 62px;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background: transparent;
+      color: #dbe8f4;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 #02070c;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .language-switcher button:hover,
+    .language-switcher button:focus-visible {
+      color: var(--gold);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .language-switcher button[aria-pressed="true"] {
+      border-color: rgba(255, 202, 40, 0.8);
+      background: linear-gradient(180deg, #26ddff, #0874a8);
+      color: #031018;
+      text-shadow: none;
+      box-shadow: inset 0 -3px 0 rgba(255, 202, 40, 0.78);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(290px, 0.82fr);
+      align-items: end;
+      gap: clamp(28px, 5vw, 72px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #02070c;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 3px;
+      background: var(--gold);
+      box-shadow: 0 0 14px rgba(255, 202, 40, 0.5);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-family: Impact, "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      color: #f7fbff;
+      font-size: clamp(2.55rem, 7vw, 5.35rem);
+      font-weight: 900;
+      text-shadow: 5px 5px 0 #01050a, 0 0 22px rgba(36, 214, 255, 0.32);
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: #f7fbff;
+      text-shadow: 3px 3px 0 #01050a;
+    }
+
+    h3 {
+      font-size: 1.22rem;
+      color: var(--gold);
+      text-shadow: 2px 2px 0 #01050a;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--text);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .status-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(26, 38, 49, 0.94), rgba(8, 14, 21, 0.96)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 8px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px));
+    }
+
+    .status-panel dl {
+      display: grid;
+      gap: 0;
+      margin: 0;
+    }
+
+    .status-panel div {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(52, 80, 93, 0.88);
+    }
+
+    .status-panel div:last-child {
+      border-bottom: 0;
+    }
+
+    .status-panel dt {
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #01050a;
+    }
+
+    .status-panel dd {
+      margin: 0;
+      color: #f7fbff;
+      font-weight: 750;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 38px;
+      padding: 44px 0 72px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(19, 33, 45, 0.94), rgba(7, 13, 20, 0.96));
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #02070c;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--accent-dark);
+      outline: none;
+    }
+
+    article {
+      display: none;
+    }
+
+    article.active {
+      display: block;
+      animation: rise-in 420ms ease both;
+    }
+
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .policy-section {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(18, 31, 42, 0.94), rgba(9, 16, 24, 0.96)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 8px);
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .policy-section + .policy-section {
+      margin-top: 22px;
+    }
+
+    .policy-section p {
+      margin: 14px 0 0;
+      color: var(--text);
+    }
+
+    .policy-section ul {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .policy-section li::marker {
+      color: var(--gold);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      padding: 18px;
+      border: 1px solid rgba(52, 80, 93, 0.95);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(18, 43, 59, 0.96), rgba(9, 20, 30, 0.96));
+      box-shadow: inset 0 3px 0 rgba(36, 214, 255, 0.16);
+    }
+
+    .service-card p {
+      margin-top: 9px;
+      font-size: 0.96rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(3, 9, 15, 0.82);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255, 202, 40, 0.1);
+      color: #f5e6b8;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(52, 80, 93, 0.9);
+      color: var(--muted);
+      font-size: 0.92rem;
+      background: rgba(2, 8, 13, 0.35);
+    }
+
+    @media (max-width: 860px) {
+      .topbar,
+      .hero-grid,
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        margin-bottom: 42px;
+        padding: 14px;
+      }
+
+      .language-switcher {
+        width: auto;
+      }
+
+      .main {
+        padding-top: 24px;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        width: min(100% - 22px, 1120px);
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .topbar {
+        flex-direction: column;
+      }
+
+      .brand-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .language-switcher {
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 16vw, 4.1rem);
+      }
+
+      .status-panel div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .policy-section {
+        padding: 22px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <div class="topbar">
+        <div class="brand" aria-label="Estilo BR">
+          <img class="brand-icon" src="game_icon.png" alt="" aria-hidden="true">
+          <span>Estilo BR</span>
+        </div>
+
+        <nav class="language-switcher" aria-label="Policy language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </nav>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Privacy Policy</p>
+          <h1 data-i18n="title">Estilo BR Privacy Policy</h1>
+          <p class="hero-copy" data-i18n="intro">This policy explains how Estilo BR processes personal data through account access, authentication, analytics, payments, backend infrastructure, registration, and social features configured for the application.</p>
+        </div>
+
+        <aside class="status-panel" aria-label="Policy summary">
+          <dl>
+            <div>
+              <dt data-i18n="updatedLabel">Updated</dt>
+              <dd>June 15, 2026</dd>
+            </div>
+            <div>
+              <dt data-i18n="scopeLabel">Scope</dt>
+              <dd data-i18n="scopeValue">App, website, and connected services</dd>
+            </div>
+            <div>
+              <dt data-i18n="servicesLabel">Services</dt>
+              <dd>Facebook, Google Analytics, Google Pay, PlayFab</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell main">
+    <aside class="toc" aria-label="Policy contents">
+      <strong data-i18n="contents">Contents</strong>
+      <a href="#owner" data-i18n="navOwner">Owner and contact</a>
+      <a href="#data" data-i18n="navData">Data we collect</a>
+      <a href="#services" data-i18n="navServices">Third-party services</a>
+      <a href="#rights" data-i18n="navRights">Your rights</a>
+      <a href="#retention" data-i18n="navRetention">Retention and transfers</a>
+      <a href="#children" data-i18n="navChildren">Children</a>
+    </aside>
+
+    <main>
+      <article class="active" data-policy="en" lang="en">
+        <section class="policy-section" id="owner" data-section="owner">
+          <h2>Owner and Contact Information</h2>
+          <p>Estilo BR is the application and website covered by this Privacy Policy. The owner and privacy contact is Roxforge Games, Avenida Mofarrej 348, Conj 1308, Vila Leopoldina - SP.</p>
+          <p>Questions about this policy, data access, deletion, or consent withdrawal should be sent to <a href="mailto:contact@roxforge.com">contact@roxforge.com</a>.</p>
+        </section>
+
+        <section class="policy-section" id="data" data-section="data">
+          <h2>Personal Data We Process</h2>
+          <p>Depending on how you use Estilo BR, we may process the following categories of personal data:</p>
+          <ul>
+            <li>Account information, such as identifiers, display name, public profile details, email address, profile photo, and authentication tokens received from supported login providers.</li>
+            <li>Gameplay and backend data, such as player ID, inventory, progress, purchases, bans, multiplayer/session information, crash logs, support records, device data, IP address, and fraud-prevention signals.</li>
+            <li>Analytics data, such as device identifiers, usage events, session activity, approximate location derived from IP address, browser/app information, and cookie or tracking technology data where applicable.</li>
+            <li>Payment-related data, such as transaction status, order identifiers, purchased items, receipt data, and limited payment confirmation information. Estilo BR does not receive full card numbers from Google Pay.</li>
+            <li>Social feature data, such as public profile information and content or interactions that you choose to make visible to other users.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section" id="services" data-section="services">
+          <h2>Services Collecting Personal Data</h2>
+          <p>The policy is based on these configured service categories and providers.</p>
+
+          <div class="service-grid">
+            <div class="service-card">
+              <h3>Facebook Account Access</h3>
+              <p>Used to access account data authorized by the user, such as public profile information and permissions required for connected social features.</p>
+            </div>
+            <div class="service-card">
+              <h3>Facebook Authentication</h3>
+              <p>Used for registration and sign-in. Facebook may process identifiers, authentication data, profile data, and technical usage information according to its own terms.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Analytics (Universal Analytics)</h3>
+              <p>Used to understand app and website usage. It may collect usage data, device data, IP address, cookies, and similar identifiers.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Pay</h3>
+              <p>Used to handle payments. Google processes payment credentials and transaction data; Estilo BR receives limited order, receipt, and payment confirmation data.</p>
+            </div>
+            <div class="service-card">
+              <h3>PlayFab</h3>
+              <p>Used for hosting, backend infrastructure, account services, gameplay services, analytics, support, security, and live operations.</p>
+            </div>
+            <div class="service-card">
+              <h3>Public Profile</h3>
+              <p>Used for social features. Public profile data may be visible to other users depending on in-game features and user choices.</p>
+            </div>
+          </div>
+
+          <div class="tag-row" aria-label="Configured categories">
+            <span class="tag">Access to third-party accounts</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Handling payments</span>
+            <span class="tag">Hosting and backend infrastructure</span>
+            <span class="tag">Registration and authentication</span>
+            <span class="tag">Social features</span>
+            <span class="tag">Custom services</span>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h2>Why We Process Data</h2>
+          <p>We process personal data to create and manage accounts, authenticate users, provide multiplayer and backend services, process purchases, prevent fraud and abuse, maintain security, provide support, improve performance, analyze usage, comply with legal obligations, and operate public profile or social features selected by the user.</p>
+        </section>
+
+        <section class="policy-section" id="rights" data-section="rights">
+          <h2>Your Rights and Choices</h2>
+          <p>Depending on your location and applicable law, you may request access, correction, deletion, restriction, portability, objection to certain processing, or withdrawal of consent. You may also be able to manage tracking preferences through the device, browser, platform, or any consent controls made available by Estilo BR.</p>
+          <p>To exercise these rights, contact the application owner using the privacy contact details listed above. We may need to verify your request before acting on it.</p>
+        </section>
+
+        <section class="policy-section" id="retention" data-section="retention">
+          <h2>Retention, Transfers, and Security</h2>
+          <p>Personal data is kept only for as long as reasonably necessary for the purposes described in this policy, including account operation, support, fraud prevention, legal compliance, backup, and dispute resolution. Some records may be retained after account deletion where required by law or for legitimate security and accounting reasons.</p>
+          <p>Third-party providers may process data in countries other than your own. Estilo BR relies on provider safeguards, contractual protections, and appropriate security practices to protect personal data during storage and transfer.</p>
+        </section>
+
+        <section class="policy-section" id="children" data-section="children">
+          <h2>Children</h2>
+          <p>Estilo BR is not intended to collect personal data from children without any consent required by applicable law. If a parent or guardian believes that a child provided personal data without proper authorization, they should contact the application owner so the data can be reviewed and, where appropriate, deleted.</p>
+        </section>
+      </article>
+
+      <article data-policy="pt" lang="pt-BR">
+        <section class="policy-section" data-section="owner">
+          <h2>Proprietario e Informacoes de Contato</h2>
+          <p>Estilo BR e o aplicativo e site coberto por esta Politica de Privacidade. O proprietario e contato de privacidade e Roxforge Games, Avenida Mofarrej 348, Conj 1308, Vila Leopoldina - SP.</p>
+          <p>Perguntas sobre esta politica, acesso a dados, exclusao ou retirada de consentimento devem ser enviadas para <a href="mailto:contact@roxforge.com">contact@roxforge.com</a>.</p>
+        </section>
+
+        <section class="policy-section" data-section="data">
+          <h2>Dados Pessoais Que Tratamos</h2>
+          <p>Dependendo de como voce usa o Estilo BR, podemos tratar as seguintes categorias de dados pessoais:</p>
+          <ul>
+            <li>Informacoes de conta, como identificadores, nome de exibicao, detalhes de perfil publico, email, foto de perfil e tokens de autenticacao recebidos dos provedores de login suportados.</li>
+            <li>Dados de jogo e backend, como ID do jogador, inventario, progresso, compras, banimentos, informacoes de sessoes ou multiplayer, logs de falha, registros de suporte, dados do dispositivo, endereco IP e sinais de prevencao a fraude.</li>
+            <li>Dados de analise, como identificadores de dispositivo, eventos de uso, atividade de sessao, localizacao aproximada derivada do IP, informacoes do navegador ou aplicativo e dados de cookies ou tecnologias semelhantes quando aplicavel.</li>
+            <li>Dados relacionados a pagamentos, como status da transacao, identificadores de pedido, itens comprados, dados de recibo e confirmacao limitada de pagamento. O Estilo BR nao recebe numeros completos de cartao pelo Google Pay.</li>
+            <li>Dados de recursos sociais, como informacoes de perfil publico e conteudo ou interacoes que voce decide tornar visiveis a outros usuarios.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section" data-section="services">
+          <h2>Servicos Que Coletam Dados Pessoais</h2>
+          <p>Esta politica e baseada nestas categorias e provedores configurados.</p>
+
+          <div class="service-grid">
+            <div class="service-card">
+              <h3>Acesso a Conta do Facebook</h3>
+              <p>Usado para acessar dados de conta autorizados pelo usuario, como informacoes de perfil publico e permissoes necessarias para recursos sociais conectados.</p>
+            </div>
+            <div class="service-card">
+              <h3>Autenticacao pelo Facebook</h3>
+              <p>Usada para cadastro e login. O Facebook pode tratar identificadores, dados de autenticacao, dados de perfil e informacoes tecnicas de uso conforme seus proprios termos.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Analytics (Universal Analytics)</h3>
+              <p>Usado para entender o uso do aplicativo e do site. Pode coletar dados de uso, dados do dispositivo, endereco IP, cookies e identificadores semelhantes.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Pay</h3>
+              <p>Usado para processar pagamentos. O Google processa credenciais de pagamento e dados da transacao; o Estilo BR recebe dados limitados de pedido, recibo e confirmacao de pagamento.</p>
+            </div>
+            <div class="service-card">
+              <h3>PlayFab</h3>
+              <p>Usado para hospedagem, infraestrutura de backend, servicos de conta, servicos de jogo, analise, suporte, seguranca e operacoes ao vivo.</p>
+            </div>
+            <div class="service-card">
+              <h3>Perfil Publico</h3>
+              <p>Usado para recursos sociais. Dados de perfil publico podem ser visiveis a outros usuarios dependendo dos recursos do jogo e das escolhas do usuario.</p>
+            </div>
+          </div>
+
+          <div class="tag-row" aria-label="Categorias configuradas">
+            <span class="tag">Acesso a contas de terceiros</span>
+            <span class="tag">Analise</span>
+            <span class="tag">Pagamentos</span>
+            <span class="tag">Hospedagem e backend</span>
+            <span class="tag">Cadastro e autenticacao</span>
+            <span class="tag">Recursos sociais</span>
+            <span class="tag">Servicos personalizados</span>
+          </div>
+        </section>
+
+        <section class="policy-section" data-section="rights">
+          <h2>Por Que Tratamos Dados</h2>
+          <p>Tratamos dados pessoais para criar e gerenciar contas, autenticar usuarios, fornecer servicos multiplayer e de backend, processar compras, prevenir fraude e abuso, manter seguranca, prestar suporte, melhorar desempenho, analisar uso, cumprir obrigacoes legais e operar perfis publicos ou recursos sociais escolhidos pelo usuario.</p>
+        </section>
+
+        <section class="policy-section" data-section="retention">
+          <h2>Seus Direitos e Escolhas</h2>
+          <p>Dependendo da sua localizacao e da lei aplicavel, voce pode solicitar acesso, correcao, exclusao, restricao, portabilidade, oposicao a determinados tratamentos ou retirada de consentimento. Voce tambem pode gerenciar preferencias de rastreamento pelo dispositivo, navegador, plataforma ou por controles de consentimento disponibilizados pelo Estilo BR.</p>
+          <p>Para exercer esses direitos, contate o proprietario do aplicativo usando os dados de privacidade indicados acima. Podemos precisar verificar sua solicitacao antes de atende-la.</p>
+        </section>
+
+        <section class="policy-section" data-section="children">
+          <h2>Retencao, Transferencias e Seguranca</h2>
+          <p>Os dados pessoais sao mantidos somente pelo tempo razoavelmente necessario para as finalidades descritas nesta politica, incluindo operacao da conta, suporte, prevencao a fraude, cumprimento legal, backup e resolucao de disputas. Alguns registros podem ser mantidos apos a exclusao da conta quando exigido por lei ou por motivos legitimos de seguranca e contabilidade.</p>
+          <p>Provedores terceiros podem tratar dados em paises diferentes do seu. O Estilo BR conta com salvaguardas dos provedores, protecoes contratuais e praticas de seguranca adequadas para proteger dados pessoais durante armazenamento e transferencia.</p>
+        </section>
+
+        <section class="policy-section" data-section="owner">
+          <h2>Criancas</h2>
+          <p>O Estilo BR nao pretende coletar dados pessoais de criancas sem o consentimento exigido pela lei aplicavel. Se um pai, mae ou responsavel acreditar que uma crianca forneceu dados pessoais sem autorizacao adequada, deve contatar o proprietario do aplicativo para que os dados sejam revisados e, quando apropriado, excluidos.</p>
+        </section>
+      </article>
+
+      <article data-policy="es" lang="es">
+        <section class="policy-section" data-section="owner">
+          <h2>Propietario e Informacion de Contacto</h2>
+          <p>Estilo BR es la aplicacion y el sitio web cubiertos por esta Politica de Privacidad. El propietario y contacto de privacidad es Roxforge Games, Avenida Mofarrej 348, Conj 1308, Vila Leopoldina - SP.</p>
+          <p>Las preguntas sobre esta politica, acceso a datos, eliminacion o retiro del consentimiento deben enviarse a <a href="mailto:contact@roxforge.com">contact@roxforge.com</a>.</p>
+        </section>
+
+        <section class="policy-section" data-section="data">
+          <h2>Datos Personales Que Tratamos</h2>
+          <p>Segun como uses Estilo BR, podemos tratar las siguientes categorias de datos personales:</p>
+          <ul>
+            <li>Informacion de cuenta, como identificadores, nombre visible, detalles de perfil publico, correo electronico, foto de perfil y tokens de autenticacion recibidos de los proveedores de inicio de sesion compatibles.</li>
+            <li>Datos de juego y backend, como ID de jugador, inventario, progreso, compras, bloqueos, informacion de sesiones o multijugador, registros de fallos, registros de soporte, datos del dispositivo, direccion IP y senales de prevencion de fraude.</li>
+            <li>Datos de analitica, como identificadores de dispositivo, eventos de uso, actividad de sesion, ubicacion aproximada derivada de la IP, informacion del navegador o aplicacion y datos de cookies o tecnologias similares cuando corresponda.</li>
+            <li>Datos relacionados con pagos, como estado de transaccion, identificadores de pedido, articulos comprados, datos de recibo y confirmacion limitada de pago. Estilo BR no recibe numeros completos de tarjeta desde Google Pay.</li>
+            <li>Datos de funciones sociales, como informacion de perfil publico y contenido o interacciones que decides hacer visibles para otros usuarios.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section" data-section="services">
+          <h2>Servicios Que Recopilan Datos Personales</h2>
+          <p>Esta politica se basa en estas categorias y proveedores configurados.</p>
+
+          <div class="service-grid">
+            <div class="service-card">
+              <h3>Acceso a Cuenta de Facebook</h3>
+              <p>Se usa para acceder a datos de cuenta autorizados por el usuario, como informacion de perfil publico y permisos necesarios para funciones sociales conectadas.</p>
+            </div>
+            <div class="service-card">
+              <h3>Autenticacion con Facebook</h3>
+              <p>Se usa para registro e inicio de sesion. Facebook puede tratar identificadores, datos de autenticacion, datos de perfil e informacion tecnica de uso segun sus propios terminos.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Analytics (Universal Analytics)</h3>
+              <p>Se usa para comprender el uso de la aplicacion y el sitio web. Puede recopilar datos de uso, datos del dispositivo, direccion IP, cookies e identificadores similares.</p>
+            </div>
+            <div class="service-card">
+              <h3>Google Pay</h3>
+              <p>Se usa para gestionar pagos. Google procesa credenciales de pago y datos de transaccion; Estilo BR recibe datos limitados de pedido, recibo y confirmacion de pago.</p>
+            </div>
+            <div class="service-card">
+              <h3>PlayFab</h3>
+              <p>Se usa para alojamiento, infraestructura backend, servicios de cuenta, servicios de juego, analitica, soporte, seguridad y operaciones en vivo.</p>
+            </div>
+            <div class="service-card">
+              <h3>Perfil Publico</h3>
+              <p>Se usa para funciones sociales. Los datos del perfil publico pueden ser visibles para otros usuarios segun las funciones del juego y las elecciones del usuario.</p>
+            </div>
+          </div>
+
+          <div class="tag-row" aria-label="Categorias configuradas">
+            <span class="tag">Acceso a cuentas de terceros</span>
+            <span class="tag">Analitica</span>
+            <span class="tag">Pagos</span>
+            <span class="tag">Alojamiento y backend</span>
+            <span class="tag">Registro y autenticacion</span>
+            <span class="tag">Funciones sociales</span>
+            <span class="tag">Servicios personalizados</span>
+          </div>
+        </section>
+
+        <section class="policy-section">
+          <h2>Por Que Tratamos Datos</h2>
+          <p>Tratamos datos personales para crear y administrar cuentas, autenticar usuarios, proporcionar servicios multijugador y backend, procesar compras, prevenir fraude y abuso, mantener la seguridad, brindar soporte, mejorar el rendimiento, analizar el uso, cumplir obligaciones legales y operar perfiles publicos o funciones sociales elegidas por el usuario.</p>
+        </section>
+
+        <section class="policy-section" data-section="rights">
+          <h2>Tus Derechos y Opciones</h2>
+          <p>Segun tu ubicacion y la ley aplicable, puedes solicitar acceso, correccion, eliminacion, restriccion, portabilidad, oposicion a ciertos tratamientos o retiro del consentimiento. Tambien puedes gestionar preferencias de rastreo desde el dispositivo, navegador, plataforma o controles de consentimiento disponibles en Estilo BR.</p>
+          <p>Para ejercer estos derechos, contacta al propietario de la aplicacion usando los datos de privacidad indicados arriba. Es posible que debamos verificar tu solicitud antes de atenderla.</p>
+        </section>
+
+        <section class="policy-section" data-section="retention">
+          <h2>Retencion, Transferencias y Seguridad</h2>
+          <p>Los datos personales se conservan solo durante el tiempo razonablemente necesario para los fines descritos en esta politica, incluida la operacion de cuenta, soporte, prevencion de fraude, cumplimiento legal, copias de seguridad y resolucion de disputas. Algunos registros pueden conservarse despues de eliminar una cuenta cuando la ley lo exija o por motivos legitimos de seguridad y contabilidad.</p>
+          <p>Los proveedores externos pueden tratar datos en paises distintos al tuyo. Estilo BR se apoya en salvaguardas de proveedores, protecciones contractuales y practicas de seguridad adecuadas para proteger los datos personales durante el almacenamiento y la transferencia.</p>
+        </section>
+
+        <section class="policy-section" data-section="children">
+          <h2>Ninos</h2>
+          <p>Estilo BR no tiene la intencion de recopilar datos personales de ninos sin el consentimiento exigido por la ley aplicable. Si un padre, madre o tutor cree que un nino proporciono datos personales sin autorizacion adecuada, debe contactar al propietario de la aplicacion para que los datos sean revisados y, cuando corresponda, eliminados.</p>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <footer>
+    <div class="shell">
+      <span data-i18n="footer">Privacy Policy for Estilo BR. Privacy contact: contact@roxforge.com.</span>
+    </div>
+  </footer>
+
+  <script>
+    const copy = {
+      en: {
+        eyebrow: "Privacy Policy",
+        title: "Estilo BR Privacy Policy",
+        intro: "This policy explains how Estilo BR processes personal data through account access, authentication, analytics, payments, backend infrastructure, registration, and social features configured for the application.",
+        updatedLabel: "Updated",
+        scopeLabel: "Scope",
+        scopeValue: "App, website, and connected services",
+        servicesLabel: "Services",
+        contents: "Contents",
+        navOwner: "Owner and contact",
+        navData: "Data we collect",
+        navServices: "Third-party services",
+        navRights: "Your rights",
+        navRetention: "Retention and transfers",
+        navChildren: "Children",
+        footer: "Privacy Policy for Estilo BR. Privacy contact: contact@roxforge.com."
+      },
+      pt: {
+        eyebrow: "Politica de Privacidade",
+        title: "Politica de Privacidade do Estilo BR",
+        intro: "Esta politica explica como o Estilo BR trata dados pessoais por meio de acesso a conta, autenticacao, analise, pagamentos, infraestrutura de backend, cadastro e recursos sociais configurados para o aplicativo.",
+        updatedLabel: "Atualizada",
+        scopeLabel: "Escopo",
+        scopeValue: "Aplicativo, site e servicos conectados",
+        servicesLabel: "Servicos",
+        contents: "Conteudo",
+        navOwner: "Proprietario e contato",
+        navData: "Dados coletados",
+        navServices: "Servicos de terceiros",
+        navRights: "Seus direitos",
+        navRetention: "Retencao e transferencias",
+        navChildren: "Criancas",
+        footer: "Politica de Privacidade do Estilo BR. Contato de privacidade: contact@roxforge.com."
+      },
+      es: {
+        eyebrow: "Politica de Privacidad",
+        title: "Politica de Privacidad de Estilo BR",
+        intro: "Esta politica explica como Estilo BR trata datos personales mediante acceso a cuenta, autenticacion, analitica, pagos, infraestructura backend, registro y funciones sociales configuradas para la aplicacion.",
+        updatedLabel: "Actualizada",
+        scopeLabel: "Alcance",
+        scopeValue: "Aplicacion, sitio web y servicios conectados",
+        servicesLabel: "Servicios",
+        contents: "Contenido",
+        navOwner: "Propietario y contacto",
+        navData: "Datos recopilados",
+        navServices: "Servicios de terceros",
+        navRights: "Tus derechos",
+        navRetention: "Retencion y transferencias",
+        navChildren: "Ninos",
+        footer: "Politica de Privacidad de Estilo BR. Contacto de privacidad: contact@roxforge.com."
+      }
+    };
+
+    const buttons = Array.from(document.querySelectorAll("[data-lang]"));
+    const articles = Array.from(document.querySelectorAll("[data-policy]"));
+    const translated = Array.from(document.querySelectorAll("[data-i18n]"));
+    const sections = Array.from(document.querySelectorAll("[data-section]"));
+
+    function setLanguage(language) {
+      document.documentElement.lang = language === "pt" ? "pt-BR" : language;
+
+      buttons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+      });
+
+      articles.forEach((article) => {
+        article.classList.toggle("active", article.dataset.policy === language);
+      });
+
+      sections.forEach((section) => {
+        const isActive = section.closest("[data-policy]").dataset.policy === language;
+        if (isActive) {
+          section.id = section.dataset.section;
+        } else {
+          section.removeAttribute("id");
+        }
+      });
+
+      translated.forEach((element) => {
+        const key = element.dataset.i18n;
+        element.textContent = copy[language][key];
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+  </script>
+</body>
+</html>
